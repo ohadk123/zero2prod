@@ -1,0 +1,643 @@
+warning: unused manifest key: target.x86_64-unknown-linux-gnu.rustflags
+   Compiling sqlx-macros v0.5.13
+error[E0432]: unresolved import `syn::spanned`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/attributes.rs:4:10
+    |
+4   | use syn::spanned::Spanned;
+    |          ^^^^^^^ could not find `spanned` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:456:9
+    |
+456 | pub mod spanned;
+    |         ^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:454:1
+    |
+454 | #[cfg(all(feature = "parsing", feature = "printing"))]
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/attributes.rs:6:22
+    |
+6   | use syn::{Attribute, DeriveInput, Field, Lit, Meta, MetaNameValue, NestedMeta, Variant};
+    |                      ^^^^^^^^^^^ no `DeriveInput` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved imports `syn::parse_quote`, `syn::Data`, `syn::DataEnum`, `syn::DataStruct`, `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/decode.rs:11:5
+    |
+11  |     parse_quote, Arm, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |     ^^^^^^^^^^^       ^^^^  ^^^^^^^^  ^^^^^^^^^^  ^^^^^^^^^^^ no `DeriveInput` in the root
+    |     |                 |     |         |
+    |     |                 |     |         no `DataStruct` in the root
+    |     |                 |     no `DataEnum` in the root
+    |     |                 no `Data` in the root
+    |     no `parse_quote` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:443:9
+    |
+443 | pub mod parse_quote;
+    |         ^^^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:441:7
+    |
+441 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:25
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                         ^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:31
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                               ^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:41
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                         ^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+help: a similar name exists in the module
+    |
+11  -     parse_quote, Arm, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+11  +     parse_quote, Arm, data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |
+help: a similar name exists in the module
+    |
+11  -     parse_quote, Arm, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+11  +     parse_quote, Arm, Data, DataEnum, PatStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |
+
+error[E0432]: unresolved imports `syn::parse_quote`, `syn::Data`, `syn::DataEnum`, `syn::DataStruct`, `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/encode.rs:11:5
+    |
+11  |     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Expr, Field, Fields, FieldsNamed,
+    |     ^^^^^^^^^^^  ^^^^  ^^^^^^^^  ^^^^^^^^^^  ^^^^^^^^^^^ no `DeriveInput` in the root
+    |     |            |     |         |
+    |     |            |     |         no `DataStruct` in the root
+    |     |            |     no `DataEnum` in the root
+    |     |            no `Data` in the root
+    |     no `parse_quote` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:443:9
+    |
+443 | pub mod parse_quote;
+    |         ^^^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:441:7
+    |
+441 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:25
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                         ^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:31
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                               ^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:41
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                         ^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+help: a similar name exists in the module
+    |
+11  -     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Expr, Field, Fields, FieldsNamed,
+11  +     parse_quote, data, DataEnum, DataStruct, DeriveInput, Expr, Field, Fields, FieldsNamed,
+    |
+help: a similar name exists in the module
+    |
+11  -     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Expr, Field, Fields, FieldsNamed,
+11  +     parse_quote, Data, DataEnum, PatStruct, DeriveInput, Expr, Field, Fields, FieldsNamed,
+    |
+
+error[E0432]: unresolved imports `syn::parse_quote`, `syn::Data`, `syn::DataStruct`, `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/row.rs:4:5
+    |
+4   |     parse_quote, punctuated::Punctuated, token::Comma, Data, DataStruct, DeriveInput, Field,
+    |     ^^^^^^^^^^^                                        ^^^^  ^^^^^^^^^^  ^^^^^^^^^^^ no `DeriveInput` in the root
+    |     |                                                  |     |
+    |     |                                                  |     no `DataStruct` in the root
+    |     no `parse_quote` in the root                       no `Data` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:443:9
+    |
+443 | pub mod parse_quote;
+    |         ^^^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:441:7
+    |
+441 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:25
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                         ^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:41
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                         ^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+help: a similar name exists in the module
+    |
+4   -     parse_quote, punctuated::Punctuated, token::Comma, Data, DataStruct, DeriveInput, Field,
+4   +     parse_quote, punctuated::Punctuated, token::Comma, data, DataStruct, DeriveInput, Field,
+    |
+help: a similar name exists in the module
+    |
+4   -     parse_quote, punctuated::Punctuated, token::Comma, Data, DataStruct, DeriveInput, Field,
+4   +     parse_quote, punctuated::Punctuated, token::Comma, Data, PatStruct, DeriveInput, Field,
+    |
+
+error[E0432]: unresolved imports `syn::parse_quote`, `syn::Data`, `syn::DataEnum`, `syn::DataStruct`, `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/type.rs:10:5
+    |
+10  |     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |     ^^^^^^^^^^^  ^^^^  ^^^^^^^^  ^^^^^^^^^^  ^^^^^^^^^^^ no `DeriveInput` in the root
+    |     |            |     |         |
+    |     |            |     |         no `DataStruct` in the root
+    |     |            |     no `DataEnum` in the root
+    |     |            no `Data` in the root
+    |     no `parse_quote` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:443:9
+    |
+443 | pub mod parse_quote;
+    |         ^^^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:441:7
+    |
+441 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:25
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                         ^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:31
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                               ^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:41
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                         ^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+help: a similar name exists in the module
+    |
+10  -     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+10  +     parse_quote, data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |
+help: a similar name exists in the module
+    |
+10  -     parse_quote, Data, DataEnum, DataStruct, DeriveInput, Field, Fields, FieldsNamed,
+10  +     parse_quote, Data, DataEnum, PatStruct, DeriveInput, Field, Fields, FieldsNamed,
+    |
+
+error[E0432]: unresolved import `syn::DeriveInput`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/derives/mod.rs:16:5
+    |
+16  | use syn::DeriveInput;
+    |     ^^^^^^^^^^^^^^^^ no `DeriveInput` in the root
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:392:64
+    |
+392 | pub use crate::derive::{Data, DataEnum, DataStruct, DataUnion, DeriveInput};
+    |                                                                ^^^^^^^^^^^
+note: the item is gated behind the `derive` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:391:7
+    |
+391 | #[cfg(feature = "derive")]
+    |       ^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `syn::spanned`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/args.rs:7:10
+    |
+7   | use syn::spanned::Spanned;
+    |          ^^^^^^^ could not find `spanned` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:456:9
+    |
+456 | pub mod spanned;
+    |         ^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:454:1
+    |
+454 | #[cfg(all(feature = "parsing", feature = "printing"))]
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `syn::parse`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/input.rs:4:10
+    |
+4   | use syn::parse::{Parse, ParseStream};
+    |          ^^^^^ could not find `parse` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:805:9
+    |
+805 | pub mod parse;
+    |         ^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:803:7
+    |
+803 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:868:8
+    |
+868 | pub fn parse<T: parse::Parse>(tokens: proc_macro::TokenStream) -> Result<T> {
+    |        ^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:862:1
+    |
+862 | / #[cfg(all(
+863 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+864 | |     feature = "parsing",
+865 | |     feature = "proc-macro"
+866 | | ))]
+    | |___^
+
+error[E0432]: unresolved import `syn::parse`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/output.rs:12:10
+    |
+12  | use syn::parse::{Parse, ParseStream};
+    |          ^^^^^ could not find `parse` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:805:9
+    |
+805 | pub mod parse;
+    |         ^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:803:7
+    |
+803 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:868:8
+    |
+868 | pub fn parse<T: parse::Parse>(tokens: proc_macro::TokenStream) -> Result<T> {
+    |        ^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:862:1
+    |
+862 | / #[cfg(all(
+863 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+864 | |     feature = "parsing",
+865 | |     feature = "proc-macro"
+866 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:29:22
+    |
+29  |     let input = syn::parse_macro_input!(input as query::QueryMacroInput);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:46:22
+    |
+46  |     let input = syn::parse_macro_input!(tokenstream as syn::DeriveInput);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:55:22
+    |
+55  |     let input = syn::parse_macro_input!(tokenstream as syn::DeriveInput);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:64:22
+    |
+64  |     let input = syn::parse_macro_input!(tokenstream as syn::DeriveInput);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:73:22
+    |
+73  |     let input = syn::parse_macro_input!(input as syn::DeriveInput);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:86:22
+    |
+86  |     let input = syn::parse_macro_input!(input as LitStr);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0433]: failed to resolve: could not find `parse_macro_input` in `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/lib.rs:103:22
+    |
+103 |     let input = syn::parse_macro_input!(input as syn::ItemFn);
+    |                      ^^^^^^^^^^^^^^^^^ could not find `parse_macro_input` in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:452:9
+    |
+452 | pub mod parse_macro_input;
+    |         ^^^^^^^^^^^^^^^^^
+note: the item is gated here
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:446:1
+    |
+446 | / #[cfg(all(
+447 | |     not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "wasi"))),
+448 | |     feature = "parsing",
+449 | |     feature = "proc-macro"
+450 | | ))]
+    | |___^
+
+error[E0425]: cannot find function `parse_str` in crate `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/database/mod.rs:18:14
+    |
+18  |         syn::parse_str(Self::DATABASE_PATH).unwrap()
+    |              ^^^^^^^^^ not found in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:917:8
+    |
+917 | pub fn parse_str<T: parse::Parse>(s: &str) -> Result<T> {
+    |        ^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:915:7
+    |
+915 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+error[E0425]: cannot find function `parse_str` in crate `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/database/mod.rs:22:14
+    |
+22  |         syn::parse_str(Self::ROW_PATH).unwrap()
+    |              ^^^^^^^^^ not found in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:917:8
+    |
+917 | pub fn parse_str<T: parse::Parse>(s: &str) -> Result<T> {
+    |        ^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:915:7
+    |
+915 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+error[E0425]: cannot find function `parse_str` in crate `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/output.rs:270:22
+    |
+270 |                 syn::parse_str(remainder)?
+    |                      ^^^^^^^^^ not found in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:917:8
+    |
+917 | pub fn parse_str<T: parse::Parse>(s: &str) -> Result<T> {
+    |        ^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:915:7
+    |
+915 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+error[E0425]: cannot find function `parse_str` in crate `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/output.rs:325:33
+    |
+325 |         if let Ok(ident) = syn::parse_str(&ident) {
+    |                                 ^^^^^^^^^ not found in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:917:8
+    |
+917 | pub fn parse_str<T: parse::Parse>(s: &str) -> Result<T> {
+    |        ^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:915:7
+    |
+915 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+error[E0425]: cannot find function `parse_str` in crate `syn`
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-macros-0.5.13/src/query/mod.rs:318:46
+    |
+318 |                 let record_name: Type = syn::parse_str("Record").unwrap();
+    |                                              ^^^^^^^^^ not found in `syn`
+    |
+note: found an item that was configured out
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:917:8
+    |
+917 | pub fn parse_str<T: parse::Parse>(s: &str) -> Result<T> {
+    |        ^^^^^^^^^
+note: the item is gated behind the `parsing` feature
+   --> /home/ohad/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs:915:7
+    |
+915 | #[cfg(feature = "parsing")]
+    |       ^^^^^^^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0425, E0432, E0433.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `sqlx-macros` (lib) due to 22 previous errors
